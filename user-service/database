@@ -1,0 +1,10 @@
+#!/bin/sh
+
+NAME=user-server-db
+
+docker run -d -p 5432:5432 \
+  --name $NAME \
+  -e POSTGRES_DB=user_server \
+  -e POSTGRES_PASSWORD=123 \
+  postgres
+
