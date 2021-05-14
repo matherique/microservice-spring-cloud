@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user")
+@Table(name = "\"user\"")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,12 @@ public class User {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    public User() {
+
+    }
+
     public User(Long id, String name, String username, String email, String password, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        super();
         this.id = id;
         this.name = name;
         this.username = username;
