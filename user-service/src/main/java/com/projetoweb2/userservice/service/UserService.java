@@ -37,16 +37,14 @@ public class UserService implements UserServiceInterface {
         if (userDB == null) {
             return null;
         }
-        userDB.setId(id);
         userDB.setName(user.getName());
         userDB.setUsername(user.getUsername());
         userDB.setEmail(user.getEmail());
         // TODO: encrypt password
         userDB.setPassword(user.getPassword());
-        userDB.setCreatedAt(user.getCreatedAt());
         userDB.setUpdatedAt(LocalDateTime.now());
 
-        return userRepository.save(user);
+        return userRepository.save(userDB);
     }
 
     @Override
