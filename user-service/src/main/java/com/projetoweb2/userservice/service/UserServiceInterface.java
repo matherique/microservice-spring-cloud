@@ -10,4 +10,5 @@ public interface UserServiceInterface {
     public User createUser(User user);
     public User updateUser(Long id, User user);
     public void deleteUser(Long id);
+    public boolean login(String email, String password);
 }
